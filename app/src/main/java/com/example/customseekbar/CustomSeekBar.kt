@@ -9,9 +9,10 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
+import androidx.core.content.withStyledAttributes
 import java.lang.Math.abs
 
-class CustomSnackBar @JvmOverloads constructor(
+class CustomSeekBar @JvmOverloads constructor(
     context: Context,
     attributSet: AttributeSet? = null,
     defStyleAttr: Int = 0
@@ -31,8 +32,8 @@ class CustomSnackBar @JvmOverloads constructor(
         context.resources.getDimensionPixelSize(R.dimen.thumb_circle_radius)
     private val thumbCircleRectangle = RectF()
 
-    private val min = -50
-    private val max = 50
+    private var min = -50
+    private var max = 50
 
     init {
         circlePaint.apply {
@@ -50,6 +51,10 @@ class CustomSnackBar @JvmOverloads constructor(
             style = Paint.Style.FILL_AND_STROKE
             strokeWidth = 8f
             color = Color.GRAY
+        }
+        context.withStyledAttributes(attributSet, R.styleable.CustomSeekBar) {
+            min = getInteger(R.styleable.CustomSeekBar_csb_min, min)
+            max = getInteger(R.styleable.CustomSeekBar_csb_max, max)
         }
     }
 

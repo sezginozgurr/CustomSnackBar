@@ -15,6 +15,6 @@ class MainActivity : AppCompatActivity() {
         //Todo Bir çizgi ve daire var seekbar'da,Çizgi farklı bir renk. Geldiğim yere kadar ki kısım mavi olsun,daha sonraki kısım gri kalsın
         //Todo Bunun için ilk Kalıtım alıp değiştirilmesi gereken yerleri değiştir diyebiliyorsunuz.. Hepsini üst sınıfı olan view sınıfından kalıtım alıcaz
         //Todo
-        val custom = CustomSnackBar(this)
+        val custom = CustomSeekBar(this)
     }
 }
